@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الوضوء</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #0f3d2c;
+    --green-mid: #0b5d3b;
+    --gold: #c49a3a;
+    --gold-soft: #f6efd9;
+    --white: #ffffff;
+    --line: #e6e1d3;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+
+  body {
+    background: var(--white);
+    color: var(--green);
+    font-family: "Tajawal", Tahoma, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 20px 64px;
+    gap: 32px;
+  }
+
+  .wrap { width: min(100%, 680px); }
+
+  .back {
+    display: inline-block;
+    color: var(--green-mid);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .back:hover { border-bottom-color: var(--gold); }
+
+  /* ---------- title ---------- */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .drop {
+    width: 76px; height: 76px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--gold-soft);
+    border: 2px solid var(--gold);
+  }
+  .drop svg {
+    width: 42px; height: 42px;
+    fill: none; stroke: var(--green);
+    stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+  }
+  h1 { margin: 0; font-size: clamp(2.2rem, 7vw, 3rem); font-weight: 800; }
+  .sub { margin: 0; color: var(--green-mid); font-size: 1.15rem; font-weight: 500; }
+  .rule { width: 90px; height: 3px; background: var(--gold); border-radius: 2px; }
+
+  /* ---------- steps ---------- */
+  ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; counter-reset: step; }
+
+  li.step {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 18px 18px 18px 20px;
+    border: 1px solid var(--line);
+    border-inline-start: 4px solid var(--gold);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 6px 18px rgba(15, 61, 44, .05);
+  }
+  li.step::before {
+    content: counter(step, arabic-indic);
+    width: 40px; height: 40px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--green-mid);
+    color: var(--white);
+    font-weight: 800;
+    font-size: 1.15rem;
+  }
+
+  .top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+  .top h2 { margin: 0; font-size: 1.3rem; font-weight: 800; }
+  .count {
+    font-size: .85rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: var(--gold-soft);
+    color: var(--green);
+    border: 1px solid var(--gold);
+  }
+  li.step p { margin: 0; font-size: 1.1rem; line-height: 2; }
+
+  /* ---------- final dua ---------- */
+  li.dua {
+    background: var(--gold-soft);
+    border-color: var(--gold);
+  }
+  li.dua::before { background: var(--gold); color: var(--green); }
+  li.dua p { font-size: 1.3rem; font-weight: 700; line-height: 2.1; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a class="back" href="page 1.html">→ رجوع</a>
+</div>
+
+<header>
+  <div class="drop">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 C16 4 7 14 7 20 a9 9 0 0 0 18 0 C25 14 16 4 16 4 Z"/><path d="M12 21 a4 4 0 0 0 4 4"/></svg>
+  </div>
+  <h1>الوضوء</h1>
+  <p class="sub">خطوات الوضوء</p>
+  <div class="rule"></div>
+</header>
+
+<main class="wrap">
+  <ol>
+    <li class="step">
+      <div>
+        <div class="top"><h2>النية</h2></div>
+        <p>تستحضر النية بقلبك للوضوء دون التلفظ بها، ثم تقول: «بسم الله».</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>غسل الكفين</h2><span class="count">ثلاث مرات</span></div>
+        <p>تغسل يديك إلى الرسغين ثلاث مرات، وتخلل الماء بين الأصابع.</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>المضمضة</h2><span class="count">ثلاث مرات</span></div>
+        <p>تأخذ الماء بيدك اليمنى وتديره في فمك ثم تبصقه، وتفعل ذلك ثلاث مرات.</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>الاستنشاق والاستنثار</h2><span class="count">ثلاث مرات</span></div>
+        <p>تجذب الماء بأنفك بيدك اليمنى (استنشاق)، ثم تخرجه بيدك اليسرى (استنثار)، وتفعل ذلك ثلاث مرات.</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>غسل الوجه</h2><span class="count">ثلاث مرات</span></div>
+        <p>تغسل وجهك كاملًا ثلاث مرات (من منابت شعر الرأس إلى أسفل الذقن، ومن الأذن إلى الأذن).</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>غسل اليدين إلى المرفقين</h2><span class="count">ثلاث مرات</span></div>
+        <p>تغسل يدك اليمنى من أطراف الأصابع إلى المرفق (المرفق يدخل في الغسل) ثلاث مرات، ثم تفعل نفس الشيء باليد اليسرى ثلاث مرات.</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>مسح الرأس والأذنين</h2><span class="count">مرة واحدة</span></div>
+        <p>تبلل يديك بالماء وتمسح بهما رأسك مرة واحدة (تبدأ من مقدمة الرأس إلى قفاه ثم تعود إلى المقدمة)، ثم تمسح سبابتيك داخل أذنيك وإبهاميك خلفهما.</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>غسل الرجلين إلى الكعبين</h2><span class="count">ثلاث مرات</span></div>
+        <p>تغسل رجلك اليمنى مع الكعبين ثلاث مرات (وتخلل بين أصابع القدم)، ثم تغسل رجلك اليسرى كذلك ثلاث مرات.</p>
+      </div>
+    </li>
+
+    <li class="step dua">
+      <div>
+        <div class="top"><h2>الدعاء بعد الوضوء</h2></div>
+        <p>بعد الانتهاء، يُستحب أن تقول: «أشهد أن لا إله إلا الله وحده لا شريك له وأشهد أن محمدًا عبده ورسوله، اللهم اجعلني من التوابين واجعلني من المتطهرين».</p>
+      </div>
+    </li>
+  </ol>
+</main>
+
+</body>
+</html>
