@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ما بعد الصلاة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #0f3d2c;
+    --green-mid: #0b5d3b;
+    --gold: #c49a3a;
+    --gold-soft: #f6efd9;
+    --white: #ffffff;
+    --line: #e6e1d3;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+
+  body {
+    background: var(--white);
+    color: var(--green);
+    font-family: "Tajawal", Tahoma, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 20px 64px;
+    gap: 32px;
+  }
+
+  .wrap { width: min(100%, 680px); }
+
+  .back {
+    display: inline-block;
+    color: var(--green-mid);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .back:hover { border-bottom-color: var(--gold); }
+
+  /* ---------- title ---------- */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .badge {
+    width: 76px; height: 76px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--gold-soft);
+    border: 2px solid var(--gold);
+  }
+  .badge svg {
+    width: 42px; height: 42px;
+    fill: none; stroke: var(--green);
+    stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+  }
+  h1 { margin: 0; font-size: clamp(2.2rem, 7vw, 3rem); font-weight: 800; }
+  .sub { margin: 0; color: var(--green-mid); font-size: 1.15rem; font-weight: 500; }
+  .rule { width: 90px; height: 3px; background: var(--gold); border-radius: 2px; }
+
+  /* ---------- numbered steps ---------- */
+  ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; counter-reset: step; }
+
+  li.step {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 18px 18px 18px 20px;
+    border: 1px solid var(--line);
+    border-inline-start: 4px solid var(--gold);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 6px 18px rgba(15, 61, 44, .05);
+  }
+  li.step::before {
+    content: counter(step, arabic-indic);
+    width: 40px; height: 40px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--green-mid);
+    color: var(--white);
+    font-weight: 800;
+    font-size: 1.15rem;
+  }
+
+  .top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+  .top h2 { margin: 0; font-size: 1.3rem; font-weight: 800; }
+  .count {
+    font-size: .85rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: var(--gold-soft);
+    color: var(--green);
+    border: 1px solid var(--gold);
+  }
+  .step p, .tip p { margin: 0; font-size: 1.1rem; line-height: 2; }
+
+  /* block holding the recited text (tashahhud / salawat) */
+  .recite {
+    margin: 10px 0 2px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: var(--gold-soft);
+    border: 1px solid var(--gold);
+    text-align: center;
+  }
+  .recite div { font-size: 1.3rem; font-weight: 700; line-height: 2.2; }
+  .recite.big div { font-size: 1.45rem; line-height: 2.4; font-weight: 500; }
+  .surah {
+    display: flex; align-items: center; gap: 10px;
+    margin: 14px 0 0;
+    font-weight: 800; font-size: 1.1rem;
+  }
+  .surah::before {
+    content: ""; width: 9px; height: 9px; background: var(--gold); transform: rotate(45deg);
+  }
+</style>
+
+</head>
+<body>
+
+<div class="wrap">
+  <a class="back" href="page 1.html">→ رجوع</a>
+</div>
+
+<header>
+  <div class="badge">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor" stroke="none" style="color:#0f3d2c"><circle cx="24" cy="14" r="2.1"/><circle cx="21.7" cy="19.7" r="2.1"/><circle cx="16" cy="22" r="2.1"/><circle cx="10.3" cy="19.7" r="2.1"/><circle cx="8" cy="14" r="2.1"/><circle cx="10.3" cy="8.3" r="2.1"/><circle cx="16" cy="6" r="2.1"/><circle cx="21.7" cy="8.3" r="2.1"/></g><path d="M16 24.5 V27.5"/><circle cx="16" cy="29" r="1.4"/></svg>
+  </div>
+  <h1>ما بعد الصلاة</h1>
+  <p class="sub">الأذكار والأعمال بعد الصلاة</p>
+  <div class="rule"></div>
+</header>
+
+<main class="wrap">
+  <ol>
+    <li class="step">
+      <div>
+        <div class="top"><h2>الاستغفار</h2><span class="count">ثلاث مرات</span></div>
+        <p>البدء بالاستغفار ثلاثاً (أستغفر الله، أستغفر الله، أستغفر الله) فور التسليم مباشرة.</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>الأذكار المأثورة</h2><span class="count">٣٣ مرة لكل ذكر</span></div>
+        <p>قول «اللهم أنت السلام ومنك السلام تباركت يا ذا الجلال والإكرام»، ثم التسبيح (33)، والتحميد (33)، والتكبير (33)، وختم المئة بـ «لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير».</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>قراءة آية الكرسي</h2></div>
+        <p>قراءة الآية (255) من سورة البقرة:</p>
+        <div class="recite big">
+          <div>﴿اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۚ مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ﴾</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>قراءة المعوذات</h2></div>
+        <p>قراءة السور التالية كاملة مرة واحدة بعد كل صلاة (وثلاث مرات بعد الفجر والمغرب):</p>
+
+        <div class="surah">سورة الإخلاص</div>
+        <div class="recite big">
+          <div>قُلْ هُوَ اللَّهُ أَحَدٌ</div>
+          <div>اللَّهُ الصَّمَدُ</div>
+          <div>لَمْ يَلِدْ وَلَمْ يُولَدْ</div>
+          <div>وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ</div>
+        </div>
+
+        <div class="surah">سورة الفلق</div>
+        <div class="recite big">
+          <div>قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ</div>
+          <div>مِن شَرِّ مَا خَلَقَ</div>
+          <div>وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ</div>
+          <div>وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ</div>
+          <div>وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ</div>
+        </div>
+
+        <div class="surah">سورة الناس</div>
+        <div class="recite big">
+          <div>قُلْ أَعُوذُ بِرَبِّ النَّاسِ</div>
+          <div>مَلِكِ النَّاسِ</div>
+          <div>إِلَٰهِ النَّاسِ</div>
+          <div>مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ</div>
+          <div>الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ</div>
+          <div>مِنَ الْجِنَّةِ وَالنَّاسِ</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>الدعاء المأثور والخاص</h2></div>
+        <p>التوجه إلى الله بالدعاء، ومنه ما أوصى به النبي ﷺ: «اللهم أعني على ذكرك وشكرك وحسن عبادتك»، ثم الدعاء لنفسك ولوالديك.</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>صلاة السنن الرواتب</h2></div>
+        <p>الحرص على أداء ركعات السنة التابعة للصلوات (ركعتان بعد الظهر، ركعتان بعد المغرب، ركعتان بعد العشاء، وركعتان قبل الفجر).</p>
+      </div>
+    </li>
+
+    <li class="step">
+      <div>
+        <div class="top"><h2>البقاء في المصلى</h2></div>
+        <p>الجلوس لفترة قصيرة في مكانك بعد الصلاة، لتستغفر لك الملائكة وتدعو لك بالرحمة.</p>
+      </div>
+    </li>
+  </ol>
+</main>
+
+</body>
+</html>
