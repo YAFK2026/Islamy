@@ -395,6 +395,72 @@
     50% { transform: scale(1.02); }
     100% { transform: scale(1); }
   }
+
+  /* ---------- section 4: Pillars of Islam ---------- */
+  .pillars-card {
+    width: min(100%, 560px);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--green-mid);
+    border-radius: 20px;
+    padding: 28px 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #fdfcf7 100%);
+    box-shadow: 0 15px 35px rgba(15, 61, 44, .1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .pillars-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--green);
+    text-align: center;
+    margin: 0 0 4px;
+    border-bottom: 2px solid var(--gold-soft);
+    padding-bottom: 12px;
+  }
+  .pillars-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .pillar-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+  }
+  .pillar-item:hover {
+    background: #fbf8ee;
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(196, 154, 58, 0.15);
+  }
+  .pillar-num {
+    width: 36px;
+    height: 36px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    background: var(--gold-soft);
+    color: var(--green);
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+  .pillar-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1.4;
+  }
 </style>
 </head>
 <body>
@@ -487,6 +553,33 @@
     <button class="btn-tasbeeh" id="btn-count">سبّح (اضغط هنا)</button>
     <button class="btn-reset" id="btn-reset">إعادة ضبط</button>
   </div>
+</section>
+
+<!-- ---------- section 4: Pillars of Islam ---------- -->
+<section class="pillars-card" dir="rtl" lang="ar">
+  <h2 class="pillars-title">أركان الإسلام</h2>
+  <ul class="pillars-list">
+    <li class="pillar-item">
+      <div class="pillar-num">1</div>
+      <div class="pillar-text">شهادة أن لا إله إلا الله وأن محمدًا رسول الله</div>
+    </li>
+    <li class="pillar-item">
+      <div class="pillar-num">2</div>
+      <div class="pillar-text">إقامة الصلاة</div>
+    </li>
+    <li class="pillar-item">
+      <div class="pillar-num">3</div>
+      <div class="pillar-text">إيتاء الزكاة</div>
+    </li>
+    <li class="pillar-item">
+      <div class="pillar-num">4</div>
+      <div class="pillar-text">صوم رمضان</div>
+    </li>
+    <li class="pillar-item">
+      <div class="pillar-num">5</div>
+      <div class="pillar-text">حج البيت لمن استطاع إليه سبيلًا</div>
+    </li>
+  </ul>
 </section>
 
 
