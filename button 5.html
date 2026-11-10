@@ -98,20 +98,45 @@
   }
 
   .back-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     margin-top: 20px;
-    padding: 12px 28px;
+    padding: 16px 32px;
+    background: var(--white);
+    color: var(--green);
+    border: 1.5px solid var(--green-mid);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.15rem;
+    border-radius: 14px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(15, 61, 44, 0.08);
+  }
+  .back-btn .ic {
+    width: 36px; height: 36px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--gold-soft);
+    color: var(--green);
+    border: 1.5px solid var(--gold);
+  }
+  .back-btn .ic svg {
+    width: 20px; height: 20px;
+    fill: none; stroke: currentColor;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .back-btn:hover {
     background: var(--green-mid);
     color: var(--white);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    border-radius: 12px;
-    transition: background 0.2s, transform 0.1s;
-    box-shadow: 0 4px 12px rgba(11, 93, 59, 0.2);
-    text-align: center;
+    border-color: var(--green-mid);
   }
-  .back-btn:hover { background: var(--green); }
+  .back-btn:hover .ic {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--green);
+  }
   .back-btn:active { transform: scale(0.98); }
 
   .nav-wrapper {
@@ -226,7 +251,15 @@
 </div>
 
 <div class="nav-wrapper">
-  <a href="index.html" class="back-btn">العودة إلى الصفحة الرئيسية</a>
+  <!-- تم التعديل هنا للعودة إلى الصفحة الأولى بالاسم المضبوط -->
+  <a href="page1_prayer_times_dynamic (1).html" class="back-btn">
+    <span class="ic">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M20 8 L10 16 L20 24"/>
+      </svg>
+    </span>
+    العودة
+  </a>
 </div>
 
 </body>
