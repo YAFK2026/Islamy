@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Egyptian Prayer Time</title>
+<title>Egyptian Prayer Time - مواقيت الصلاة في مصر</title>
 
 <!-- Web App / PWA Standalone Configuration -->
 <meta name="mobile-web-app-capable" content="yes">
@@ -16,6 +16,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<!-- FontAwesome for Instagram Icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
   :root {
     --green: #0f3d2c;
@@ -38,16 +41,42 @@
     align-items: center;
     padding: 48px 20px 64px;
     gap: 40px;
+    position: relative;
   }
 
-  /* ---------- header: mosque + title beside it ---------- */
+  /* ---------- Fixed Top-Right Instagram Button ---------- */
+  .insta-link {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .insta-link:hover {
+    transform: scale(1.11);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  }
+
+  /* ---------- header: mosque + title ---------- */
   header {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 28px;
     flex-wrap: wrap;
-    text-align: left;
+    text-align: right;
   }
   .mosque { width: clamp(150px, 34vw, 210px); height: auto; flex: none; }
 
@@ -103,7 +132,7 @@
     border-radius: 0;
     background: var(--white);
     color: var(--green);
-    text-align: left;
+    text-align: right;
     font-weight: 500;
     border-inline-start: 4px solid transparent;
   }
@@ -112,7 +141,7 @@
 
   .slot .name { font-weight: 700; font-size: 1.1rem; }
   .slot .name em { font-style: normal; font-weight: 500; color: var(--green-mid); margin-inline-start: 8px; font-size: .95rem; }
-  .slot .t { text-align: right; line-height: 1.2; }
+  .slot .t { text-align: left; line-height: 1.2; }
   .slot .t b { font-size: 1.3rem; font-weight: 800; font-variant-numeric: tabular-nums; }
   .slot .t small { display: block; font-size: .8rem; color: #7a7355; }
 
@@ -446,8 +475,17 @@
 </head>
 <body>
 
+<!-- Fixed Instagram Top-Right Redirect -->
+<a href="https://www.instagram.com/islamy_eg?dlrf=MWRqbDB5eWt3N3p0NQ==" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="insta-link" 
+   aria-label="Instagram Profile">
+  <i class="fa-brands fa-instagram"></i>
+</a>
+
 <header>
-  <!-- mosque -->
+  <!-- mosque vector illustration -->
   <svg class="mosque" viewBox="0 0 200 160" role="img" aria-label="Mosque">
     <rect x="8" y="140" width="184" height="6" rx="3" fill="#c49a3a"/>
     <g fill="#0f3d2c">
@@ -492,7 +530,7 @@
     <li><button class="slot" data-prayer="Isha"><div class="name">Isha <em>العشاء</em></div><div class="t"><b>--:--</b><small>--:--</small></div></button></li>
   </ul>
 
-  <div id="output" class="empty" aria-live="polite">Tap a prayer to see its time</div>
+  <div id="output" class="empty" aria-live="polite">اضغط على أي صلاة لعرض التوقيت</div>
 </main>
 
 <section class="steps" dir="rtl" lang="ar">
@@ -669,7 +707,7 @@
     }
   }, 60000);
 
-  // Buttons navigation (1 to 6)
+  // Navigation steps
   const steps = document.querySelectorAll(".step");
   steps.forEach(btn => {
     btn.addEventListener("click", () => {
