@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>قصص الأنبياء - Egyptian Prayer Time</title>
+
+<!-- Web App / PWA Standalone Configuration -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="قصص الأنبياء">
+<meta name="theme-color" content="#0f3d2c">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --green: #0f3d2c;
+    --green-mid: #0b5d3b;
+    --gold: #c49a3a;
+    --gold-soft: #f6efd9;
+    --white: #ffffff;
+    --line: #e6e1d3;
+    --bg-light: #fdfcf7;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+
+  body {
+    background: var(--bg-light);
+    color: var(--green);
+    font-family: "Tajawal", Tahoma, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px 48px;
+    gap: 24px;
+  }
+
+  /* Header & Back Navigation */
+  header {
+    width: min(100%, 720px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--gold-soft);
+  }
+
+  .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--white);
+    color: var(--green);
+    border: 1.5px solid var(--gold);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(15, 61, 44, 0.05);
+  }
+  .btn-back:hover {
+    background: var(--gold-soft);
+    transform: translateY(-2px);
+  }
+
+  .header-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--green);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-title svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 2;
+  }
+
+  /* Container & Cards */
+  .container {
+    width: min(100%, 720px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .prophet-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--gold);
+    border-radius: 18px;
+    padding: 22px 20px;
+    box-shadow: 0 10px 25px rgba(15, 61, 44, 0.06);
+    transition: all 0.2s ease;
+  }
+
+  .prophet-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 12px 30px rgba(196, 154, 58, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .prophet-name {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--green-mid);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--line);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .prophet-name::before {
+    content: "❖";
+    color: var(--gold);
+    font-size: 1.1rem;
+  }
+
+  .prophet-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .prophet-story {
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #2c5e49;
+    background: var(--gold-soft);
+    padding: 12px 16px;
+    border-radius: 10px;
+    border-right: 3px solid var(--gold);
+    margin: 0;
+  }
+
+  .prophet-lesson {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #946c14;
+    background: #fffdf5;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #f3eacb;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 20px 12px 36px; }
+    .header-title { font-size: 1.25rem; }
+    .prophet-card { padding: 18px 14px; }
+    .prophet-story { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-title">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M6 6 h14 a4 4 0 0 1 4 4 v16 a4 4 0 0 0 -4 -4 H6 Z"/>
+      <path d="M6 6 v16 h14"/>
+      <path d="M10 11 h8 M10 15 h6"/>
+    </svg>
+    قصص الأنبياء عليهم السلام
+  </div>
+  <!-- زر الرجوع لصفحة مواقيت الصلاة page 1.html -->
+  <a href="page 1.html" class="btn-back">
+    &#8594; الرجوع
+  </a>
+</header>
+
+<div class="container">
+
+  <!-- سيدنا آدم -->
+  <div class="prophet-card">
+    <h2 class="prophet-name">سيدنا آدم (عليه السلام) - بداية الخلق</h2>
+    <div class="prophet-body">
+      <p class="prophet-story">خلقه الله من تراب وعلّمه الأسماء كلها، وأمر الملائكة وإبليس بالسجود له. امتنع إبليس استكباراً فأُخرج من الرحمة، وسكن آدم وزوجه حواء الجنة. وسوس لهما الشيطان فأكلا من الشجرة المحرمة، فهبطا إلى الأرض وبدأ الابتلاء.</p>
+      <div class="prophet-lesson">💡 العبرة: فتح باب التوبة والاستغفار دائماً، والحذر من التكبر والوسوسة.</div>
+    </div>
+  </div>
+
+  <!-- سيدنا نوح -->
+  <div class="prophet-card">
+    <h2 class="prophet-name">سيدنا نوح (عليه السلام) - أصل البشرية الثاني</h2>
+    <div class="prophet-body">
+      <p class="prophet-story">دعا قومه إلى التوحيد لمئة عام إلا خمسين عاماً، واستُقبل بالاستهزاء والإصرار على الكفر. أمره الله ببناء السفينة، وركب معه المؤمنون ومن كل زوجين اثنين. أرسل الله الطوفان وغرق الكافرون (ومنهم ابنه)، ونجى المؤمنون.</p>
+      <div class="prophet-lesson">💡 العبرة: الصبر الثابت في الدعوة، وأن نسب الإنسان لا ينجيه من دون الإيمان.</div>
+    </div>
+  </div>
+
+  <!-- سيدنا إبراهيم -->
+  <div class="prophet-card">
+    <h2 class="prophet-name">سيدنا إبراهيم (عليه السلام) - خليل الرحمن</h2>
+    <div class="prophet-body">
+      <p class="prophet-story">حطّم الأصنام وأقام الحجة على قومه، فألقوه في النار فجعلها الله برداً وسلاماً عليه. هاجر مع زوجه وحصل الابتلاء الأكبر بترك زوجته هاجر وابنه إسماعيل في وادٍ غير ذي زرع (مكة). بُنيت الكعبة مع إسماعيل، واجتاز اختبار ذبح ابنه بالفداء بكبش عظيم.</p>
+      <div class="prophet-lesson">💡 العبرة: كمال التسليم والانقياد لأمر الله والتوكل المطلق عليه.</div>
+    </div>
+  </div>
+
+  <!-- سيدنا موسى -->
+  <div class="prophet-card">
+    <h2 class="prophet-name">سيدنا موسى (عليه السلام) - كليم الله</h2>
+    <div class="prophet-body">
+      <p class="prophet-story">أُلقي طفلاً في النهر ليربي في بيت فرعون، ثم خرج إلى مدين وعاد نبياً. أُرسل بمعجزات العصا واليد البيضاء لمواجهة استكبار فرعون، وشق الله له البحر ونجى بني إسرائيل وغرق فرعون. واجه مع بني إسرائيل الكثير من الجحود والتعنت والتيه في الأرض 40 سنة.</p>
+      <div class="prophet-lesson">💡 العبرة: نصرة الحق مهما بلغ طغيان الباطل، والصبر على التكاليف.</div>
+    </div>
+  </div>
+
+  <!-- سيدنا يوسف -->
+  <div class="prophet-card">
+    <h2 class="prophet-name">سيدنا يوسف (عليه السلام) - الصديق</h2>
+    <div class="prophet-body">
+      <p class="prophet-story">كاد له إخوته وألقوه في الجب، ثم بيع مملوكاً في مصر. ثبت أمام فتنة امرأة العزيز، ودخل السجن مظلوماً لعدة سنوات. فسر رؤيا الملك وزيراً للاقتصاد، وإنقاذ مصر من القحط والتحاق أهله به.</p>
+      <div class="prophet-lesson">💡 العبرة: الصبر على البلاء والابتلاء بالشهوات، والصفح والتسامح عند القدرة.</div>
+    </div>
+  </div>
+
+  <!-- سيدنا عيسى -->
+  <div class="prophet-card">
+    <h2 class="prophet-name">سيدنا عيسى (عليه السلام) - روح الله</h2>
+    <div class="prophet-body">
+      <p class="prophet-story">ولد معجزة من العذراء مريم، وتكلم في المهد صبياً. أُيد بمعجزات إبراء الأكمه والأبرص وإحياء الموتى بإذن الله. رفعه الله إليه وحفظه عندما حاول الكفار قتله، وسينزل في آخر الزمان.</p>
+      <div class="prophet-lesson">💡 العبرة: التزكية الروحية، والرحمة والتواضع.</div>
+    </div>
+  </div>
+
+  <!-- سيدنا محمد -->
+  <div class="prophet-card">
+    <h2 class="prophet-name">سيدنا محمد (صلى الله عليه وسلم) - خاتم الأنبياء</h2>
+    <div class="prophet-body">
+      <p class="prophet-story">وُلد يتيماً ولقّب بالصادق الأمين قبل البعثة. نزل عليه الوحي في غار حراء، ودعا في مكة 13 سنة متحتملاً الأذى والاضطهاد. هاجر إلى المدينة المنورة وأقام الدولة الإسلامية ونشر العدل والتوحيد. فتح مكة بالرحمة والعفو، وأكمل الدين وتوفي بعد أن أدّى الأمانة.</p>
+      <div class="prophet-lesson">💡 العبرة: الخُلق العظيم، الشمولية في الدعوة، والتوازن بين الإيمان والعمل.</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
