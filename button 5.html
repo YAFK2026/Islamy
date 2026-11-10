@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الأدعية والأذكار - Egyptian Prayer Time</title>
+
+<!-- Web App / PWA Standalone Configuration -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="دعاء">
+<meta name="theme-color" content="#0f3d2c">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --green: #0f3d2c;
+    --green-mid: #0b5d3b;
+    --gold: #c49a3a;
+    --gold-soft: #f6efd9;
+    --white: #ffffff;
+    --line: #e6e1d3;
+    --bg-light: #fdfcf7;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+
+  body {
+    background: var(--bg-light);
+    color: var(--green);
+    font-family: "Tajawal", Tahoma, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px 48px;
+    gap: 24px;
+  }
+
+  /* Header & Back Navigation */
+  header {
+    width: min(100%, 720px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--gold-soft);
+  }
+
+  .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--white);
+    color: var(--green);
+    border: 1.5px solid var(--gold);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(15, 61, 44, 0.05);
+  }
+  .btn-back:hover {
+    background: var(--gold-soft);
+    transform: translateY(-2px);
+  }
+
+  .header-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--green);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-title svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 2;
+  }
+
+  /* Container & Section Cards */
+  .container {
+    width: min(100%, 720px);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .section-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--gold);
+    border-radius: 18px;
+    padding: 24px 20px;
+    box-shadow: 0 10px 25px rgba(15, 61, 44, 0.06);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  .section-header h2 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--green-mid);
+    margin: 0;
+  }
+
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--gold-soft);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    font-weight: 800;
+    font-size: 1.1rem;
+  }
+
+  /* Duaa Items */
+  .duaa-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .duaa-item {
+    background: #fdfcf9;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    transition: all 0.2s ease;
+  }
+
+  .duaa-item:hover {
+    border-color: var(--gold);
+    background: #fffefb;
+    box-shadow: 0 4px 12px rgba(196, 154, 58, 0.1);
+  }
+
+  .duaa-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .duaa-title::before {
+    content: "•";
+    color: var(--gold);
+    font-size: 1.4rem;
+  }
+
+  .duaa-text {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.8;
+    color: #1a4d38;
+    background: var(--gold-soft);
+    padding: 12px 16px;
+    border-radius: 10px;
+    border-right: 3px solid var(--gold);
+    margin-top: 6px;
+  }
+
+  .duaa-subtext {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 20px 12px 36px; }
+    .header-title { font-size: 1.3rem; }
+    .duaa-text { font-size: 1.05rem; padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-title">
+    <svg viewBox="0 0 32 32">
+      <path d="M16 4 C21.5 4 26 8.5 26 14 C26 19.5 21.5 24 16 24 C14.5 24 13.1 23.7 11.8 23 C15.5 21.5 18 18 18 14 C18 10 15.5 6.5 11.8 5 C13.1 4.3 14.5 4 16 4 Z"/>
+      <path d="M8 8 L9 11 L12 12 L9 13 L8 16 L7 13 L4 12 L7 11 Z"/>
+    </svg>
+    جوامع الأدعية والأذكار
+  </div>
+  <a href="index.html" class="btn-back">
+    &#8594; العودة
+  </a>
+</header>
+
+<div class="container">
+
+  <!-- القسم الأول: أدعية وأذكار اليوم والليلة -->
+  <section class="section-card">
+    <div class="section-header">
+      <div class="section-icon">١</div>
+      <h2>أدعية وأذكار اليوم والليلة</h2>
+    </div>
+    <div class="duaa-list">
+      
+      <div class="duaa-item">
+        <div class="duaa-title">الاستيقاظ من النوم</div>
+        <div class="duaa-text">«الحَمْدُ للهِ الذي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وإليه النُّشُورُ».</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">لبس الثوب</div>
+        <div class="duaa-text">«الحَمْدُ للهِ الذي كَسَانِي هَذَا (الثَّوْبَ) وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ».</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">دخول الخلاء (الحمام) والخروج منه</div>
+        <div class="duaa-text">عند الدخول: «اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ».</div>
+        <div class="duaa-text">عند الخروج: «غُفْرَانَكَ».</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">الخروج من المنزل والدخول إليه</div>
+        <div class="duaa-text">عند الخروج: «بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ».</div>
+        <div class="duaa-text">عند الدخول: «بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى رَبِّنَا تَوَكَّلْنَا» <span class="duaa-subtext">(ثم السلام على أهل البيت).</span></div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">الذهاب إلى المسجد</div>
+        <div class="duaa-text">«اللَّهُمَّ اجْعَلْ فِي قَلْبِي نُوراً، وَفِي لِسَانِي نُوراً، وَفِي سَمْعِي نُوراً، وَفِي بَصَرِي نُوراً... اللَّهُمَّ أَعْظِمْ لِي نُوراً».</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">ركوب السيارة أو وسائل المواصلات</div>
+        <div class="duaa-text">«سُبْحَانَ الذي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ، وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ... اللَّهُمَّ إِنِّى أَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى».</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">الطعام والشراب</div>
+        <div class="duaa-text">قبل الأكل: «بِسْمِ اللَّهِ» <span class="duaa-subtext">(وإن نسيت: «بِسْمِ اللَّهِ فِي أَوَّلِهِ وَآخِرِهِ»).</span></div>
+        <div class="duaa-text">بعد الطعام: «الحَمْدُ للهِ الذي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ».</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">دخول السوق والأماكن المزدحمة</div>
+        <div class="duaa-text">«لا إله إلا الله وحده لا شريك له، له الملك وله الحمد، يُحيي ويُميت، وهو حي لا يموت، بيده الخير، وهو على كل شيء قدير».</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">النوم والخلود إلى الفراش</div>
+        <div class="duaa-subtext">القراءة والمسح: قراءة المعوذات والنفخ في الكفين والمسح على الجسد (3 مرات)، وقراءة آية الكرسي وخواتيم البقرة.</div>
+        <div class="duaa-text">«بِاسْمِكَ رَبِّ وَضَعْتُ جَنْبِي، وبِكَ أَرْفَعُهُ، إنْ أَمْسَكْتَ نَفْسِي فارْحَمْها، وإنْ أَرْسَلْتَها فاحْفَظْها بما تحْفَظُ به عِبادَكَ الصَّالِحِينَ».</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- القسم الثاني: أدعية الامتحانات والمذاكرة وتيسير الصعاب -->
+  <section class="section-card">
+    <div class="section-header">
+      <div class="section-icon">٢</div>
+      <h2>أدعية الامتحانات والمذاكرة وتيسير الصعاب</h2>
+    </div>
+    <div class="duaa-list">
+      
+      <div class="duaa-item">
+        <div class="duaa-title">عند صعوبة الإجابة أو الفهم</div>
+        <div class="duaa-text">«اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا، وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلًا».</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">لشرح الصدر وتيسير النطق والبيان</div>
+        <div class="duaa-text">﴿رَبِّ اشْرَحْ لِي صَدْرِي * وَيَسِّرْ لِي أَمْرِي * وَاحْلُلْ عُقْدَةً مِّن لِّسَانِي * يَفْقَهُوا قَوْلِي﴾.</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">لطلب زيادة العلم والتثبيت</div>
+        <div class="duaa-text">﴿رَّبِّ زِدْنِي عِلْمًا﴾.</div>
+        <div class="duaa-text">«اللَّهُمَّ يَا مُعَلِّمَ إِبْرَاهِيمَ عَلِّمْنِي، وَيَا مُفَهِّمَ سُلَيْمَانَ فَهِّمْنِي، اللَّهُمَّ ذَكِّرْنِي مَا نَسِيتُ وَعَلِّمْنِي مَا جَهِلْتُ».</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- القسم الثالث: أدعية المحن والشدائد والكرب -->
+  <section class="section-card">
+    <div class="section-header">
+      <div class="section-icon">٣</div>
+      <h2>أدعية المحن والشدائد والكرب</h2>
+    </div>
+    <div class="duaa-list">
+      
+      <div class="duaa-item">
+        <div class="duaa-title">دعاء التفرج والوقاية من الضيق (دعاء ذي النون)</div>
+        <div class="duaa-text">«لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ».</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">عند وقوع المصيبة أو البلاء</div>
+        <div class="duaa-text">«إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ، اللَّهُمَّ أْجُرْنِي فِي مُصِيبَتِي، وَأَخْلِفْ لِي خَيْرًا مِنْهَا».</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">التفويض الكامل والاستعانة بالله</div>
+        <div class="duaa-text">﴿حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ﴾.</div>
+        <div class="duaa-text">﴿وَأُفَوِّضُ أَمْرِي إِلَى اللَّهِ ۚ إِنَّ اللَّهَ بَصِيرٌ بِالْعِبَادِ﴾.</div>
+      </div>
+
+      <div class="duaa-item">
+        <div class="duaa-title">دعاء تفريج الهم والحزن</div>
+        <div class="duaa-text">«اللَّهُمَّ إِنِّي عَبْدُكَ، ابْنُ عَبْدِكَ، ابْنُ أَمَتِكَ، نَاصِيَتِي بِيَدِكَ، مَاضٍ فِيَّ حُكْمُكَ، عَدْلٌ فِيَّ قَضَاؤُكَ، أَسْأَلُكَ بِكُلِّ اسْمٍ هُوَ لَكَ سَمَّيْتَ بِهِ نَفْسَكَ، أَوْ أَنْزَلْتَهُ فِي كِتَابِكَ، أَوْ عَلَّمْتَهُ أَحَدًا مِنْ خَلْقِكَ، أَوْ اسْتَأْثَرْتَ بِهِ فِي عِلْمِ الغَيْبِ عِنْدَكَ، أَنْ تَجْعَلَ الْقُرْآنَ رَبِيعَ قَلْبِي، وَنُورَ صَدْرِي، وَجَلَاءَ حُزْنِي، وَذَهَابَ هَمِّي».</div>
+        <div class="duaa-text">«اللَّهُمَّ رَحْمَتَكَ أَرْجُو، فَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ، وَأَصْلِحْ لِي شَأْنِي كُلَّهُ، لَا إِلَهَ إِلَّا أَنْتَ».</div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
